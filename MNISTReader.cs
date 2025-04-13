@@ -1,6 +1,3 @@
-using System;
-using System.IO;
-
 public static class MNISTReader
 {
     private static string BaseDataPath => Path.Combine(Directory.GetCurrentDirectory(), "Data");

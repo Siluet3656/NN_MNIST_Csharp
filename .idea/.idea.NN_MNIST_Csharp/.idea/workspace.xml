@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="590224dd-3b5f-4379-aaf4-964e2e89107c" name="Changes" comment="?">
+    <list default="true" id="590224dd-3b5f-4379-aaf4-964e2e89107c" name="Changes" comment="MNIST Reader done">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NN_MNIST_Csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NN_MNIST_Csharp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MNISTReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MNISTReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_MNIST_Csharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NN_MNIST_Csharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,13 +69,22 @@
       <option name="project" value="LOCAL" />
       <updated>1744546869967</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="MNIST Reader done">
+      <option name="closed" value="true" />
+      <created>1744550071328</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744550071328</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <MESSAGE value="?" />
-    <option name="LAST_COMMIT_MESSAGE" value="?" />
+    <MESSAGE value="MNIST Reader done" />
+    <option name="LAST_COMMIT_MESSAGE" value="MNIST Reader done" />
   </component>
 </project>
