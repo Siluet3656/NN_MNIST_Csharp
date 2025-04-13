@@ -1,4 +1,6 @@
 using System.Diagnostics;
+using Microsoft.ML;
+
 class Program
 {
     static void Main()
@@ -20,7 +22,73 @@ class Program
         Console.WriteLine($"First 5 training label: {trainData[0].Item2}, {trainData[1].Item2}, {trainData[2].Item2}, {trainData[3].Item2}, {trainData[4].Item2}");
         
         var nn = new NeuralNetwork(new[] {28*28, 128, 128, 10}, 0.001);
-        /*
+
+        while (true)
+        {
+            Console.WriteLine("=== MNIST Neural Network v1.1 (28*28/128/128/10) ===");
+            Console.WriteLine("1. Training");
+            Console.WriteLine("2. Testing");
+            Console.WriteLine("3. Load model from file");
+            Console.WriteLine("4. Test one image");
+            Console.WriteLine("5. Exit");
+            Console.Write("Choose (1-4): ");
+
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    Train(nn, trainData);
+                    break;
+                case "2":
+                    Test(nn, testData);
+                    break;
+                case "3":
+                    int numOfEpoches = ModelIO.GetNumOfEpoches();
+                    if (numOfEpoches > 0)
+                    {
+                        Console.WriteLine("Choose file: ");
+                        for (int i = 0; i < numOfEpoches; i++)
+                        {
+                            Console.WriteLine("MNIST_Model_e"+ i +".json");
+                        }
+                        input = Console.ReadLine();
+                        nn = ModelIO.LoadModel("MNIST_Model_e"+ input +".json");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No files found.");
+                    }
+                    break;
+                case "4":
+                    Console.WriteLine("???");
+                    break;
+                case "5":
+                    Console.WriteLine("Exiting...");
+                    return;
+                default:
+                    Console.WriteLine("Invalid input! Try again.");
+                    break;
+            }
+
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
+        }
+    }
+
+    private static double CrossEntropyLoss(double[] prediction, double[] target)
+    {
+        double loss = 0;
+        for (int i = 0; i < prediction.Length; i++)
+        {
+            loss += target[i] * Math.Log(prediction[i] + 1e-10);
+        }
+        return -loss;
+    }
+
+    private static void Train(NeuralNetwork nn,(double[], int)[] trainData)
+    {
         Console.WriteLine("Training started...");
         int epochs = 10;
         int batchSize = 32;
@@ -45,8 +113,7 @@ class Program
                     target[label] = 1;
                     
                     nn.Train(image, target);
-
-                    // Вычисляем ошибку и точность
+                    
                     var prediction = nn.Predict(image);
                     error += CrossEntropyLoss(prediction, target);
                     if (prediction.ArgMax() == label) correct++;
@@ -66,8 +133,10 @@ class Program
 
         stopwatch.Stop();
         Console.WriteLine($"Training completed in {stopwatch.Elapsed.TotalSeconds:F2} seconds");
-        */
-        nn = ModelIO.LoadModel("MNIST_Model_e0.json");
+    }
+
+    private static void Test(NeuralNetwork nn, (double[], int)[] testData)
+    {
         Console.WriteLine("Testing...");
         int testCorrect = 0;
         foreach (var (image, label) in testData)
@@ -78,16 +147,6 @@ class Program
 
         double testAccuracy = testCorrect * 100.0 / testData.Length;
         Console.WriteLine($"Test Accuracy: {testAccuracy:F2}%");
-    }
-
-    private static double CrossEntropyLoss(double[] prediction, double[] target)
-    {
-        double loss = 0;
-        for (int i = 0; i < prediction.Length; i++)
-        {
-            loss += target[i] * Math.Log(prediction[i] + 1e-10);
-        }
-        return -loss;
     }
 }
 

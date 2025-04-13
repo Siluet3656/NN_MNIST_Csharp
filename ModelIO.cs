@@ -74,6 +74,13 @@ public static class ModelIO
         }
     }
 
+    public static int GetNumOfEpoches()
+    {
+        string searchPattern = "*.json";
+        string[] files = Directory.GetFiles(BaseSavesPath, searchPattern);
+        return files.Length;
+    }
+    
     private static int[] GetLayerSizes(NeuralNetwork network)
     {
         var layerSizes = new int[network.GetLayers().Length + 1];
