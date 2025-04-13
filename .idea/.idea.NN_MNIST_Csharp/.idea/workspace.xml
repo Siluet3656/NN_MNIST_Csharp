@@ -7,11 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="590224dd-3b5f-4379-aaf4-964e2e89107c" name="Changes" comment="simple start without UI">
-      <change afterPath="$PROJECT_DIR$/ModelIO.cs" afterDir="false" />
+    <list default="true" id="590224dd-3b5f-4379-aaf4-964e2e89107c" name="Changes" comment="i/o save">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NN_MNIST_Csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NN_MNIST_Csharp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NN_MNIST_Csharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/NN_MNIST_Csharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NeuralNetwork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNetwork.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,9 +119,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744563869924</updated>
-      <workItem from="1744563869925" duration="10002000" />
+      <workItem from="1744563869925" duration="10685000" />
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="i/o save">
+      <option name="closed" value="true" />
+      <created>1744581105474</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744581105474</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +142,7 @@
     <MESSAGE value="MNIST Reader done" />
     <MESSAGE value="MNIST Reader enhance" />
     <MESSAGE value="simple start without UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="simple start without UI" />
+    <MESSAGE value="i/o save" />
+    <option name="LAST_COMMIT_MESSAGE" value="i/o save" />
   </component>
 </project>

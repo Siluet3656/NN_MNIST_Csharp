@@ -20,7 +20,7 @@ class Program
         Console.WriteLine($"First 5 training label: {trainData[0].Item2}, {trainData[1].Item2}, {trainData[2].Item2}, {trainData[3].Item2}, {trainData[4].Item2}");
         
         var nn = new NeuralNetwork(new[] {28*28, 128, 128, 10}, 0.001);
-        
+        /*
         Console.WriteLine("Training started...");
         int epochs = 10;
         int batchSize = 32;
@@ -66,7 +66,8 @@ class Program
 
         stopwatch.Stop();
         Console.WriteLine($"Training completed in {stopwatch.Elapsed.TotalSeconds:F2} seconds");
-        
+        */
+        nn = ModelIO.LoadModel("MNIST_Model_e0.json");
         Console.WriteLine("Testing...");
         int testCorrect = 0;
         foreach (var (image, label) in testData)
