@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="mnist" Version="1.0.0" />
+      <PackageReference Include="System.Text.Json" Version="10.0.0-preview.3.25171.5" />
     </ItemGroup>
 
 </Project>

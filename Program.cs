@@ -17,12 +17,10 @@ class Program
             
         Console.WriteLine($"Loaded {trainData.Length} training samples");
         Console.WriteLine($"Loaded {testData.Length} test samples");
-        Console.WriteLine($"First training label: {trainData[0].Item2}");
+        Console.WriteLine($"First 5 training label: {trainData[0].Item2}, {trainData[1].Item2}, {trainData[2].Item2}, {trainData[3].Item2}, {trainData[4].Item2}");
         
-        // Создаем нейросеть: 784 входа, 2 скрытых слоя по 128 нейронов, 10 выходов
-        var nn = new NeuralNetwork(new[] {784, 128, 128, 10}, 0.001);
-
-        // Обучение
+        var nn = new NeuralNetwork(new[] {28*28, 128, 128, 10}, 0.001);
+        
         Console.WriteLine("Training started...");
         int epochs = 10;
         int batchSize = 32;
@@ -34,8 +32,7 @@ class Program
             Console.WriteLine($"Epoch {epoch + 1}/{epochs}");
             double error = 0;
             int correct = 0;
-
-            // Перемешиваем данные
+            
             var shuffledData = trainData.OrderBy(x => Guid.NewGuid()).ToArray();
 
             for (int i = 0; i < shuffledData.Length; i += batchSize)
@@ -44,11 +41,9 @@ class Program
                 
                 foreach (var (image, label) in batch)
                 {
-                    // Преобразуем метку в one-hot вектор
                     double[] target = new double[10];
                     target[label] = 1;
-
-                    // Обучаем на текущем примере
+                    
                     nn.Train(image, target);
 
                     // Вычисляем ошибку и точность
@@ -62,17 +57,16 @@ class Program
                     Console.WriteLine($"Progress: {i * 100.0 / shuffledData.Length:F1}%");
                 }
             }
-
-            // Выводим статистику после эпохи
+            
             double accuracy = correct * 100.0 / shuffledData.Length;
             double avgError = error / shuffledData.Length;
             Console.WriteLine($"Epoch {epoch + 1}: Error = {avgError:F4}, Accuracy = {accuracy:F2}%");
+            ModelIO.SaveModel(nn, "MNIST_Model_e" + epoch +".json");
         }
 
         stopwatch.Stop();
         Console.WriteLine($"Training completed in {stopwatch.Elapsed.TotalSeconds:F2} seconds");
-
-        // Тестирование
+        
         Console.WriteLine("Testing...");
         int testCorrect = 0;
         foreach (var (image, label) in testData)

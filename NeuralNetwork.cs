@@ -3,6 +3,8 @@ public class NeuralNetwork
     private readonly Layer[] _layers;
     private readonly double _learningRate;
 
+    public Layer[] GetLayers() => _layers;
+    public double GetLearningRate() => _learningRate;
     public NeuralNetwork(int[] layerSizes, double learningRate)
     {
         if (layerSizes.Length < 2)
