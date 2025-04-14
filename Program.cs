@@ -5,22 +5,6 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("Loading MNIST dataset...");
-            
-        (double[], int)[] trainData = MNISTReader.LoadDataSet(
-            "train-images-idx3-ubyte", 
-            "train-labels-idx1-ubyte", 
-            60000);
-            
-        (double[], int)[] testData = MNISTReader.LoadDataSet(
-            "t10k-images-idx3-ubyte", 
-            "t10k-labels-idx1-ubyte", 
-            10000);
-            
-        Console.WriteLine($"Loaded {trainData.Length} training samples");
-        Console.WriteLine($"Loaded {testData.Length} test samples");
-        Console.WriteLine($"First 5 training label: {trainData[0].Item2}, {trainData[1].Item2}, {trainData[2].Item2}, {trainData[3].Item2}, {trainData[4].Item2}");
-        
         var nn = new NeuralNetwork(new[] {28*28, 128, 128, 10}, 0.001);
 
         while (true)
@@ -29,8 +13,7 @@ class Program
             Console.WriteLine("1. Training");
             Console.WriteLine("2. Testing");
             Console.WriteLine("3. Load model from file");
-            Console.WriteLine("4. Test one image");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("4. Exit");
             Console.Write("Choose (1-4): ");
 
             string input = Console.ReadLine();
@@ -38,10 +21,10 @@ class Program
             switch (input)
             {
                 case "1":
-                    Train(nn, trainData);
+                    Train(nn);
                     break;
                 case "2":
-                    Test(nn, testData);
+                    Test(nn);
                     break;
                 case "3":
                     int numOfEpoches = ModelIO.GetNumOfEpoches();
@@ -61,9 +44,6 @@ class Program
                     }
                     break;
                 case "4":
-                    Console.WriteLine("???");
-                    break;
-                case "5":
                     Console.WriteLine("Exiting...");
                     return;
                 default:
@@ -87,8 +67,18 @@ class Program
         return -loss;
     }
 
-    private static void Train(NeuralNetwork nn,(double[], int)[] trainData)
+    private static void Train(NeuralNetwork nn)
     {
+        Console.WriteLine("Loading MNIST dataset...");
+            
+        (double[], int)[] trainData = MNISTReader.LoadDataSet(
+            "train-images-idx3-ubyte", 
+            "train-labels-idx1-ubyte", 
+            60000);
+        
+        Console.WriteLine($"Loaded {trainData.Length} training samples");
+        Console.WriteLine($"First 5 training label: {trainData[0].Item2}, {trainData[1].Item2}, {trainData[2].Item2}, {trainData[3].Item2}, {trainData[4].Item2}");
+
         Console.WriteLine("Training started...");
         int epochs = 10;
         int batchSize = 32;
@@ -135,8 +125,16 @@ class Program
         Console.WriteLine($"Training completed in {stopwatch.Elapsed.TotalSeconds:F2} seconds");
     }
 
-    private static void Test(NeuralNetwork nn, (double[], int)[] testData)
+    private static void Test(NeuralNetwork nn)
     {
+        (double[], int)[] testData = MNISTReader.LoadDataSet(
+            "t10k-images-idx3-ubyte", 
+            "t10k-labels-idx1-ubyte", 
+            10000);
+        
+        Console.WriteLine($"Loaded {testData.Length} test samples");
+        Console.WriteLine($"First 5 testing label: {testData[0].Item2}, {testData[1].Item2}, {testData[2].Item2}, {testData[3].Item2}, {testData[4].Item2}");
+        
         Console.WriteLine("Testing...");
         int testCorrect = 0;
         foreach (var (image, label) in testData)
