@@ -35,8 +35,9 @@ class Program
                         {
                             Console.WriteLine("MNIST_Model_e"+ i +".json");
                         }
+                        Console.WriteLine("Choose (0-" + Convert.ToString(numOfEpoches - 1) + "): ");
                         input = Console.ReadLine();
-                        nn = ModelIO.LoadModel("MNIST_Model_e"+ input +".json");
+                        nn = ModelIO.LoadModel("MNIST_Model_e" + input +".json");
                     }
                     else
                     {
