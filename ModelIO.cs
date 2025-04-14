@@ -76,9 +76,16 @@ public static class ModelIO
 
     public static int GetNumOfEpoches()
     {
-        string searchPattern = "*.json";
-        string[] files = Directory.GetFiles(BaseSavesPath, searchPattern);
-        return files.Length;
+        if (Directory.Exists(BaseSavesPath))
+        {
+            string searchPattern = "*.json";
+            string[] files = Directory.GetFiles(BaseSavesPath, searchPattern);
+            return files.Length;
+        }
+        else
+        {
+            return 0;
+        }
     }
     
     private static int[] GetLayerSizes(NeuralNetwork network)

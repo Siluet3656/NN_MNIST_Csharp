@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="590224dd-3b5f-4379-aaf4-964e2e89107c" name="Changes" comment="simple UI added">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NN_MNIST_Csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NN_MNIST_Csharp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+    <list default="true" id="590224dd-3b5f-4379-aaf4-964e2e89107c" name="Changes" comment="simple UI update">
+      <change beforePath="$PROJECT_DIR$/ModelIO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ModelIO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +119,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744563869924</updated>
       <workItem from="1744563869925" duration="16136000" />
-      <workItem from="1744625362544" duration="213000" />
+      <workItem from="1744625362544" duration="680000" />
     </task>
     <task id="LOCAL-00005" summary="i/o save">
       <option name="closed" value="true" />
@@ -146,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744588429970</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="simple UI update">
+      <option name="closed" value="true" />
+      <created>1744625855811</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744625855811</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +169,7 @@
     <MESSAGE value="i/o save" />
     <MESSAGE value="i/o load" />
     <MESSAGE value="simple UI added" />
-    <option name="LAST_COMMIT_MESSAGE" value="simple UI added" />
+    <MESSAGE value="simple UI update" />
+    <option name="LAST_COMMIT_MESSAGE" value="simple UI update" />
   </component>
 </project>
