@@ -7,8 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="590224dd-3b5f-4379-aaf4-964e2e89107c" name="Changes" comment="UI update">
+    <list default="true" id="590224dd-3b5f-4379-aaf4-964e2e89107c" name="Changes" comment="Read me udpate">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NN_MNIST_Csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NN_MNIST_Csharp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +122,7 @@
       <workItem from="1744563869925" duration="16136000" />
       <workItem from="1744625362544" duration="1124000" />
       <workItem from="1744651997066" duration="1308000" />
+      <workItem from="1744728970710" duration="2534000" />
     </task>
     <task id="LOCAL-00005" summary="i/o save">
       <option name="closed" value="true" />
@@ -170,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744652842740</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Read me udpate">
+      <option name="closed" value="true" />
+      <created>1744729088329</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744729088329</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +199,7 @@
     <MESSAGE value="simple UI update" />
     <MESSAGE value="UI bugfix" />
     <MESSAGE value="UI update" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI update" />
+    <MESSAGE value="Read me udpate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Read me udpate" />
   </component>
 </project>

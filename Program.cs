@@ -85,10 +85,11 @@ class Program
         int batchSize = 32;
 
         var stopwatch = Stopwatch.StartNew();
-        
+        int trainProgress = 0;
         for (int epoch = 0; epoch < epochs; epoch++)
         {
             Console.WriteLine($"Epoch {epoch + 1}/{epochs}");
+            Console.WriteLine($"Progress: ");
             double error = 0;
             int correct = 0;
             
@@ -109,16 +110,18 @@ class Program
                     error += CrossEntropyLoss(prediction, target);
                     if (prediction.ArgMax() == label) correct++;
                 }
-
+                
                 if (i % (batchSize * 100) == 0)
                 {
-                    Console.WriteLine($"Progress: {i * 100.0 / shuffledData.Length:F1}%");
+                    trainProgress = (int)(i*100/shuffledData.Length);
+                    UpdateProgressbar(trainProgress);
+                    
                 }
             }
-            
+            UpdateProgressbar(100);
             double accuracy = correct * 100.0 / shuffledData.Length;
             double avgError = error / shuffledData.Length;
-            Console.WriteLine($"Epoch {epoch + 1}: Error = {avgError:F4}, Accuracy = {accuracy:F2}%");
+            Console.WriteLine($"\nEpoch {epoch + 1}: Error = {avgError:F4}, Accuracy = {accuracy:F2}%");
             ModelIO.SaveModel(nn, "MNIST_Model_e" + epoch +".json");
         }
 
@@ -146,6 +149,22 @@ class Program
 
         double testAccuracy = testCorrect * 100.0 / testData.Length;
         Console.WriteLine($"Test Accuracy: {testAccuracy:F2}%");
+    }
+
+    private static void UpdateProgressbar(int progress)
+    {
+        Console.Write("\r[");
+        for (int j = 0; j < 100; j++)
+        {
+            if (j < progress)
+                Console.Write("|");
+            else
+            {
+                Console.Write(".");
+            }
+        }
+        Console.Write("]");
+        Console.Write($" {progress:F1}%");
     }
 }
 
