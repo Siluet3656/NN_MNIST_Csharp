@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="590224dd-3b5f-4379-aaf4-964e2e89107c" name="Changes" comment="UI bugfix">
+    <list default="true" id="590224dd-3b5f-4379-aaf4-964e2e89107c" name="Changes" comment="UI update">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NN_MNIST_Csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NN_MNIST_Csharp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +120,7 @@
       <updated>1744563869924</updated>
       <workItem from="1744563869925" duration="16136000" />
       <workItem from="1744625362544" duration="1124000" />
-      <workItem from="1744651997066" duration="830000" />
+      <workItem from="1744651997066" duration="1308000" />
     </task>
     <task id="LOCAL-00005" summary="i/o save">
       <option name="closed" value="true" />
@@ -163,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744626121446</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="UI update">
+      <option name="closed" value="true" />
+      <created>1744652842740</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744652842740</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +188,7 @@
     <MESSAGE value="simple UI added" />
     <MESSAGE value="simple UI update" />
     <MESSAGE value="UI bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI bugfix" />
+    <MESSAGE value="UI update" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI update" />
   </component>
 </project>
